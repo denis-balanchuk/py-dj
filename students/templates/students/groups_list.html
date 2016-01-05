@@ -1,0 +1,65 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %} Список груп студентів {% endblock meta_title%}
+
+{% block title %} Групи {% endblock title %}
+
+{% block content %}
+			<div class="row" id="group">	
+				<div class="col-xs-12" id="group">
+								
+				
+			<a class="btn btn-primary" href="{% url "groups_add"%}">Додати групу</a>
+			</div>
+			<div class="col-xs-12" id="table">
+				<table class="table table-hover table-striped" id="table">
+					<thead> 
+						<tr>
+						<td><a href="#">№</a></td>
+						<td><a title="Редагувати" href="#">Назва &uarr;</a></td>
+						<td><a title="Редагувати" href="#">Староста</a></td>
+						<td>Дії</td>
+						</tr>
+					</thead>
+					<tbody>
+					{% for group in groups%}
+						<tr>
+							<td>{{ forloop.counter }}</td>
+							<td><a title="Редагувати" href="{% url "groups_edit" group.id %}"> {{ group.name_of_group }} </a></td>
+							<td><a title="Редагувати" href="{% url "groups_edit" group.id %}"> {{ group.starosta }} </a></td>
+							<td>
+								<div class="dropdown">
+									<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Дія
+									<span class="caret"></span></button>
+									<ul class="dropdown-menu" role="menu">
+										<li role="presentation">
+											<a role="menuitem" tabindex="-1" href="/journal/{{group.id}}">Відвідування</a>
+										</li>
+										<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="{% url "groups_edit" group.id %}">Редагувати</a>
+										</li>
+										<li role="presentation">
+											<a role="menuitem" tabindex="-1" href="{% url "groups_delete" group.id %}">Видалити</a>											
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>	
+				</table>
+			</div>
+			<div class="col-xs-12" id="">
+				<nav>
+					<ul class="pagination">
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">Далі</a></li>
+					</ul>
+				</nav>
+			</div>	
+			</div>
+			
+{% endblock content %}
