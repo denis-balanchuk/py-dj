@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 	height: 100vh;
 	background-attachment:fixed;         
     background-size: 100%;
-    padding: 20px;
+    padding-top: 20px;
 }
 .container {
 	background-color: white;
@@ -31,6 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 	*/
 /* задаємо внутрішню відстань елемента до верхнього краю */
 	padding-top: 3px;
+	padding: 0px;
 }
 /*-------------------------------*/
 /* Groups Selecrot */

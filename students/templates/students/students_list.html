@@ -40,7 +40,7 @@
 				  	  	  </button>
 				  	  	  <ul class="dropdown-menu" role="menu">
 				  	  	    <li role="presentation">
-				  	  	    	<a role="menuitem" tabindex="-1" href="/journal/{{student.id}}">Відвідування</a>
+				  	  	    	<a role="menuitem" tabindex="-1" href="{% url "journals_edit" student.id %}">Відвідування</a>
 				  	  	    </li>
 				  	  	  	<li role="presentation">
 				  	  	  	  <a role="menuitem" tabindex="-1" href="{% url "students_edit" student.id %}">Редагувати</a>		  	  	  
@@ -57,17 +57,7 @@
 				</table>
 				<!-- End Students Listing -->
 
-				<nav>
-				  	<ul class="pagination">
-				  		<li><a href="#">&laquo;</a></li>
-				  		<li><a href="#">1</a></li>
-				  		<li class="active"><a href="#">2</a></li>
-				  		<li><a href="#">3</a></li>
-				  		<li><a href="#">4</a></li>
-				  		<li><a href="#">5</a></li>
-				  		<li><a href="#">&raquo;</a></li>
-				  	</ul>
-				  </nav>
+				
 				
 
 {% endblock content %}
